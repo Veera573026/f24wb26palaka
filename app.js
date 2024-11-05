@@ -9,9 +9,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// view engine setup (moved here from pick.js)
 app.set('views', path.join(__dirname, 'views'));  // Ensure views path is correct
-app.set('view engine', 'pug');
+app.set('view engine', 'pug');  // Set Pug as the view engine
 
 // Route for grid page
 app.get('/grid', (req, res) => {

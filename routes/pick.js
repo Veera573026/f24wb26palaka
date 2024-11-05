@@ -1,9 +1,5 @@
 const express = require('express');
-const router = express.Router();  // Use express.Router() to create route handler
-
-// Set the view engine to pug
-router.set('view engine', 'pug');
-router.set('views', './views');  // Ensure this matches your project structure
+const router = express.Router();  // Create a new router
 
 // Route for random item
 router.get('/randomitem', (req, res) => {
@@ -18,4 +14,9 @@ router.get('/randomitem', (req, res) => {
   });
 });
 
-module.exports = router;  // Export the router so it can be used in app.js
+module.exports = router;  // Export the router for use in app.js
+
+      
+   
+
+      
