@@ -21,8 +21,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Plants route
 app.get('/plants', (req, res) => {
-  res.render('plants'); // Rendering the 'plants.pug' page
+  // Define the results array (Plant data)
+  const results = [
+    { plant_name: "Cactus", plant_type: "Succulent", plant_age: 5 },
+    { plant_name: "Rose", plant_type: "Flower", plant_age: 2 },
+    { plant_name: "Oak Tree", plant_type: "Tree", plant_age: 50 }
+  ];
+
+  // Render the 'plants.pug' page and pass 'results' to the template
+  res.render('plants', { results: results });
 });
 
 // catch 404 and forward to error handler
