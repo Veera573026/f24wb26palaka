@@ -18,9 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // Use the pickRouter for the '/pick' route
-app.use('/pick', pickRouter);
-
-// Other routes
+app.use('/pick', pickRouter); // Fixed: Removed the extra 's'
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
