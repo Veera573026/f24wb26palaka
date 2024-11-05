@@ -22,17 +22,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// Plants route
-app.get('/plants', (req, res) => {
-  // Define the results array (Plant data)
-  const results = [
-    { plant_name: "Cactus", plant_type: "Succulent", plant_age: 5 },
-    { plant_name: "Rose", plant_type: "Flower", plant_age: 2 },
-    { plant_name: "Oak Tree", plant_type: "Tree", plant_age: 50 }
-  ];
+// Grid route (query parameters)
+app.get('/grid', (req, res) => {
+  // Get query parameters (rows and cols)
+  let query = req.query;
 
-  // Render the 'plants.pug' page and pass 'results' to the template
-  res.render('plants', { results: results });
+  // Log the query values
+  console.log(`rows ${query.rows}`);
+  console.log(`cols ${query.cols}`);
+
+  // Render the grid.pug template with the query data
+  res.render('grid', { title: "Grid Display", query: query });
 });
 
 // catch 404 and forward to error handler
@@ -42,11 +42,9 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

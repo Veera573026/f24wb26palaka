@@ -1,0 +1,29 @@
+//- grid.pug
+block content
+  h1 Grid Display
+
+  //- Display the rows and columns from the query string
+  p Rows: #{query.rows}, Columns: #{query.cols}
+
+  //- Convert rows and cols from query strings to numbers
+  - let rows = Number(query.rows)
+  - let cols = Number(query.cols)
+
+  //- Check if rows and cols are integers
+  - if !Number.isInteger(rows) || !Number.isInteger(cols)
+    p Please provide valid integer values for rows and columns.
+  - else if (rows < 3 || rows > 13)
+    p Rows must be between 3 and 13.
+  - else if (cols < 3 || cols > 13)
+    p Columns must be between 3 and 13.
+  - else
+    //- If everything is valid, generate the grid
+    table#outer
+      //- Loop over rows
+      - for (let i = 0; i < rows; i++) {
+        tr#middle
+          //- Loop over columns
+          - for (let j = 0; j < cols; j++) {
+            td= i * i + j
+          }
+      }
