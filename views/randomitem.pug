@@ -1,14 +1,10 @@
-extends layout
+// randomitem.pug
 
-block content
-  h1= title
-
-  // Declare the image names array
-  - let image_names = ['img1.jpeg', 'img2.png', 'img3.webp', 'img4.jpg', 'img5.jpeg']
-
-  // Loop to display three random images
-  - for (let i = 0; i < 3; i++) {
-    - let randomIndex = Math.floor(Math.random() * image_names.length)
-    - let imageName = image_names[randomIndex]
-    img(src=`/images/${imageName}` alt=`${imageName}` height="300" width="300")
-  }
+doctype html
+html(lang="en")
+  head
+    title A random item
+    meta(charset="UTF-8")
+  body
+    h1 Random Items
+    // Content will be added here later
