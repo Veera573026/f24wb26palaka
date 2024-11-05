@@ -1,15 +1,12 @@
-// pick.js
-
 const express = require('express');
-const app = express();
+const router = express.Router();  // Use express.Router() to create route handler
 
 // Set the view engine to pug
-app.set('view engine', 'pug');
-app.set('views', './views'); // Adjust this path based on your project
+router.set('view engine', 'pug');
+router.set('views', './views');  // Ensure this matches your project structure
 
 // Route for random item
-app.get('/randomitem', (req, res) => {
-  // Render randomitem.pug
+router.get('/randomitem', (req, res) => {
   res.render('randomitem', {
     image_names: [
       'img1.jpeg',
@@ -21,4 +18,4 @@ app.get('/randomitem', (req, res) => {
   });
 });
 
-// Other routes...
+module.exports = router;  // Export the router so it can be used in app.js

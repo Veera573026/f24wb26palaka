@@ -44,7 +44,7 @@ app.get('/plants', (req, res) => {
 });
 
 // Import pick.js routes from the routes folder
-var pickRouter = require('./routes/pick'); // Adjusted the path to './routes/pick'
+var pickRouter = require('./routes/pick');  // Adjusted the path to './routes/pick'
 app.use('/pick', pickRouter); // Prefix the pick.js routes with /pick
 
 // catch 404 and forward to error handler
