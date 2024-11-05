@@ -12,11 +12,11 @@ app.get('/randomitem', (req, res) => {
   // Render randomitem.pug
   res.render('randomitem', {
     image_names: [
-      'item1.jpg',
-      'item2.jpg',
-      'item3.jpg',
-      'item4.jpg',
-      'item5.jpg'
+      'img1.jpeg',
+      'img2.png',
+      'img3.webp',
+      'img4.jpg',
+      'img5.jpeg'
     ]
   });
 });
