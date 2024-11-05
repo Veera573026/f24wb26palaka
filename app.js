@@ -32,7 +32,9 @@ app.get('/plants', (req, res) => {
     { plant_name: "Rose", plant_type: "Flower", plant_age: 2 },
     { plant_name: "Oak Tree", plant_type: "Tree", plant_age: 50 }
   ];
-
+  app.get('/randomitem', (req, res) => {
+    res.render('randomitem'); // This will render the new randomitem.pug view
+  });
   // Render the 'plants.pug' page and pass 'results' to the template
   res.render('plants', { results: results });
 });
