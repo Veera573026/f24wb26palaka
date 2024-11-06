@@ -10,11 +10,11 @@ block content
       //- Iterate through the results array passed from the server
       each plant in results
         .col-sm-2
-          h3 #{plant.plant_name}
-          p Type: #{plant.plant_type}
-          p Age: #{plant.plant_age} years
+          h3 #{plants.plant_name}
+          p Type: #{plants.plant_type}
+          p Age: #{plants.plant_age} years
           //- Button that calls the buy function with the plant's name
-          button(onclick="buy('#{plant.plant_name}')") Buy this plant
+          button(onclick="buy('#{plants.plant_name}')") Buy this plant
           
 //- Add a script to handle the buy function
 script.
