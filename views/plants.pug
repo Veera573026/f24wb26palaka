@@ -8,8 +8,16 @@ block content
     //- Row for results
     .row
       //- Iterate through the results array passed from the server
-      each plant in results
+      each plant, index in results
         .col-sm-2
           h3 #{plant.plant_name}
           p Type: #{plant.plant_type}
           p Age: #{plant.plant_age} years
+          //- Add an onclick event to each plant div
+          div(onclick="buy(#{index})") Buy this plant
+          
+//- Add a script to handle the buy function
+script.
+  function buy(index) {
+    alert("You purchased item " + index);
+  }
