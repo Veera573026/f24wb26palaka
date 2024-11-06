@@ -13,8 +13,8 @@ block content
           h3 #{plant.plant_name}
           p Type: #{plant.plant_type}
           p Age: #{plant.plant_age} years
-          //- Add an onclick event to each plant div
-          div(onclick="buy(#{index})") Buy this plant
+          //- Button that calls the buy function when clicked
+          button(onclick="buy(#{index})") Buy this plant
           
 //- Add a script to handle the buy function
 script.
