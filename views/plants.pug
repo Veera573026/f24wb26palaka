@@ -14,10 +14,10 @@ block content
           p Type: #{plant.plant_type}
           p Age: #{plant.plant_age} years
           //- Button that calls the buy function when clicked
-          button(onclick="buy(#{index})") Buy this plant
+          button(onclick="buy('#{plant.plant_name}')") Buy this plant
           
 //- Add a script to handle the buy function
 script.
-  function buy(index) {
-    alert("You purchased item " + index);
+  function buy(plantName) {
+    alert("You purchased: " + plantName);
   }
