@@ -8,7 +8,15 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Route to display plants page
 app.get('/plants', (req, res) => {
-  res.render('plants'); // Render the plants.pug template
+  // Example plant data to pass to the view
+  const results = [
+    { plant_name: "Cactus", plant_type: "Succulent", plant_age: 5 },
+    { plant_name: "Rose", plant_type: "Flower", plant_age: 2 },
+    { plant_name: "Oak Tree", plant_type: "Tree", plant_age: 50 }
+  ];
+  
+  // Pass the 'results' array to the plants.pug template
+  res.render('plants', { results: results });
 });
 
 // Start the server
